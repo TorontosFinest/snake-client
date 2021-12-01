@@ -10,6 +10,12 @@ const setupInput = function (conn) {
   return stdin;
 };
 
+const msg = {
+  f: "Say: This is too easy!",
+  g: "Say: Get rekt!",
+  h: "Say: GG NO RE",
+};
+
 const handleUserInput = function (input) {
   if (input === "\u0003") {
     process.exit();
@@ -25,6 +31,9 @@ const handleUserInput = function (input) {
   }
   if (input === "d") {
     connection.write("Move: right");
+  }
+  if (msg[input]) {
+    connection.write(msg[input]);
   }
 };
 
