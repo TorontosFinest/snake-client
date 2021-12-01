@@ -16,6 +16,11 @@ const connect = function () {
     conn.write("Name: Ali");
   });
 
+  conn.on("data", (data) => {
+    data = "Move: Up";
+    conn.write("Move: Up");
+  });
+
   return conn;
 };
 
